@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
+import { Route, Link } from 'wouter';
 import ListOfGifs from './components/ListOfGifs';
-import getGifs from './services/getGifs/index';
 
 function App() {
-  const [currentGifs, setCurrentGifs] = useState([]);
-
-  useEffect(() => {
-    getGifs({ keyword: 'programming' }).then((gifs) => setCurrentGifs(gifs));
-  }, []);
-
   return (
     <div className="App">
       <section className="App-content">
-        <ListOfGifs gifs={currentGifs} />
+        <h1>App</h1>
+        <Link to="/gif/pandas">Gifs de pandas</Link>
+        <Link to="/gif/mapaches">Gifs de mapaches</Link>
+        <Link to="/gif/patos">Gifs de patos</Link>
+        <Link to="/gif/panellets">Gifs de panellets</Link>
+        <Route
+          component={ListOfGifs}
+          path="/gif/:keyword"
+        />
       </section>
     </div>
   );
