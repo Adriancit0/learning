@@ -1,28 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Gif from './components/Gif/index';
-import getGifs from './services/getGifs';
+import ListOfGifs from './components/ListOfGifs';
+import getGifs from './services/getGifs/index';
 
 function App() {
   const [currentGifs, setCurrentGifs] = useState([]);
 
   useEffect(() => {
-    getGifs({ keyword: 'morty' }).then((gifs) => setCurrentGifs(gifs));
+    getGifs({ keyword: 'programming' }).then((gifs) => setCurrentGifs(gifs));
   }, []);
 
   return (
     <div className="App">
       <section className="App-content">
-        {
-          currentGifs.map((singleGif) => (
-            <Gif
-              key={singleGif.id}
-              title={singleGif.title}
-              url={singleGif.url}
-              id={singleGif.id}
-            />
-          ))
-        }
+        <ListOfGifs gifs={currentGifs} />
       </section>
     </div>
   );
