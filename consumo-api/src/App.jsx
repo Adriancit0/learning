@@ -15,7 +15,6 @@ function App() {
         {
           realgifs.map((singleGif) => <img src={singleGif} alt={singleGif} />)
         }
-        <img src="https://media4.giphy.com/media/EatwJZRUIv41G/giphy.gif?cid=a3b34af9ck7jbofk626ojbd8uni4p5x1p34i63zqfp1wwzr3&rid=giphy.gif&ct=g" alt="" />
       </section>
     </div>
   );
