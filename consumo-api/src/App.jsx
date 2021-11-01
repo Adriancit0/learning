@@ -6,14 +6,14 @@ function App() {
   const [realgifs, setGifs] = useState([]);
 
   useEffect(() => {
-    getGifs().then((gifs) => setGifs(gifs));
+    getGifs({ keyword: 'rick' }).then((gifs) => setGifs(gifs));
   }, []);
 
   return (
     <div className="App">
       <section className="App-content">
         {
-          realgifs.map((singleGif) => <img src={singleGif} alt={singleGif} />)
+          realgifs.map((singleGif) => <img src={singleGif.url} alt={singleGif.url} />)
         }
       </section>
     </div>
