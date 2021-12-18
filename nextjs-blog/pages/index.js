@@ -14,10 +14,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Caca{" "}
-          <a className="tittle__anchor" href="https://nextjs.org">
-            Next.js!
-          </a>
+          Caca <a href="https://nextjs.org">Next.js!</a>
         </h1>
         <nav>
           <Link href="/timeline">
